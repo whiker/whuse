@@ -9,12 +9,15 @@ using namespace std;
 int main()
 {
 	uuid_t uuid;
-	uuid_generate(uuid);
+	char a[40];
 	
-	char str[40];
-	uuid_unparse(uuid, str);
-	cout << strlen(str) << endl;
-	cout << str << endl;
+	uuid_generate(uuid);
+	uuid_unparse(uuid, a);
+	cout << strlen(a) << "  " << a << endl;
+	
+	uuid_generate(uuid);
+	uuid_unparse(uuid, a);
+	cout << strlen(a) << "  " << a << endl;
 	
 	return 0;
 }
