@@ -3,8 +3,8 @@ clear
 rm -f a.out
 g++ -I. \
 	-L./leveldb \
-	mysql.cc \
-	-lmysqlclient -lleveldb -lpthread
+	uuid.cc \
+	-luuid -lmysqlclient -lleveldb -lpthread
 if [ -f "a.out" ]; then
 	./a.out
 fi
