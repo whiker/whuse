@@ -11,10 +11,12 @@ int main()
 	uuid_t uuid;
 	char a[40];
 	
+	memset(a, 'a', 40);
 	uuid_generate(uuid);
 	uuid_unparse(uuid, a);
 	cout << strlen(a) << "  " << a << endl;
 	
+	memset(a, 'a', 40);
 	uuid_generate(uuid);
 	uuid_unparse(uuid, a);
 	cout << strlen(a) << "  " << a << endl;
