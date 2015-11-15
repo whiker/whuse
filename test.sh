@@ -2,8 +2,8 @@
 clear
 rm -f a.out
 g++ -I. \
-	-L./leveldb -L./mysql \
-	main.cc \
+	-L./leveldb \
+	mysql.cc \
 	-lmysqlclient -lleveldb -lpthread
 if [ -f "a.out" ]; then
 	./a.out
