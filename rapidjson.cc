@@ -24,25 +24,25 @@ int main()
 	// 输出
 	Document dst;
 	dst.SetObject();
-	Document::AllocatorType& alloc = dst.GetAllocator();
+	Document::AllocatorType& doc_alloc = dst.GetAllocator();
 	
-	Value val(src["array"][2], alloc);
-	dst.AddMember("t-1", val, alloc);
+	Value val(src["array"][2], doc_alloc);
+	dst.AddMember("t-1", val, doc_alloc);
 	
 	val = StringRef(src_str);
-	dst.AddMember("t-2", val, alloc);
+	dst.AddMember("t-2", val, doc_alloc);
 	
 	val = StringRef(src_str, 10);
-	dst.AddMember("t-2", val, alloc);  // 可以重复
+	dst.AddMember("t-2", val, doc_alloc);  // 可以重复
 	
 	Value arr(kArrayType);
 	const char *strs[] = { "hello", "world", "!" };
 	for (int i = 0; i < 3; i++)
 	{
 		val = StringRef(strs[i]);
-		arr.PushBack(val, alloc);
+		arr.PushBack(val, doc_alloc);
 	}
-	dst.AddMember("t-3", arr, alloc);
+	dst.AddMember("t-3", arr, doc_alloc);
 	
 	StringBuffer buf(0, 128);
 	Writer<StringBuffer> writer(buf);
