@@ -1,5 +1,5 @@
 {
 	"name": "apple",
 	"age": 20,
-	"array": [15, {"type": "int"}, "测试"]
+	"array": [15, {"type": "int"}, "abc测试abc"]
 }
