@@ -1,1 +1,3 @@
 *.out
+protodir/user.pb.cc
+protodir/user.pb.h
